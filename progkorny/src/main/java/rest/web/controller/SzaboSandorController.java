@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/szs")
 @Slf4j
-public class SzaboMateController {
+public class SzaboSandorController {
 
     @GetMapping("")
     public User getUser() {
