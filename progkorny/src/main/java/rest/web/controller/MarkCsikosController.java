@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/szm")
+@RequestMapping("/api/csm")
 @Slf4j
-public class SzaboMateController {
+public class MarkCsikosController {
 
     @GetMapping("")
     public User getUser() {
         log.info("process=get-users");
 
-        return new User("Szabó Máté", "szabo.mate@inf.unideb.hu", LocalDateTime.now() , LocalDateTime.now());
+        return new User("Mark Csikos", "mark.csikos@outlook.com", LocalDateTime.now() , LocalDateTime.now());
     }
 }
