@@ -1,4 +1,4 @@
-package rest.web.controller;
+﻿package rest.web.controller;
 
 import rest.entity.User;
 import rest.service.UserService;
@@ -90,6 +90,12 @@ public class UserController {
     public User getCsaUser() {
         log.info("process=get-users");
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
+    }
+
+	@GetMapping("/mal")
+    public User getMalUser() {
+        log.info("process=get-users");
+        return new User("Mohácsi Ádám László", "mohaa556@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
     @GetMapping("/szilajka")
