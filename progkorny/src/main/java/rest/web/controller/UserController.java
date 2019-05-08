@@ -29,6 +29,13 @@ public class UserController {
         log.info("process=get-users");
         return userService.getAllUsers();
     }
+	
+	@GetMapping("/ksz")
+    public User getUserKsz() {
+        log.info("process=get-users");
+
+        return new User("Katona Szabolcs", "szabolcs.katona23@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable Long id) {
