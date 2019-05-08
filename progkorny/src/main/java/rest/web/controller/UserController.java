@@ -67,16 +67,13 @@ public class UserController {
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
-<<<<<<< HEAD
     @GetMapping("/NA")
     public User getUserNA() {
         log.info("process=get-users");
 
         return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
-
-
-=======
+    
     @GetMapping("/ka")
     public User getNameAttila() {
         log.info("process=get-users");
@@ -84,7 +81,6 @@ public class UserController {
         return new User("Kozma Attila", "atikozma@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
->>>>>>> 72b8716f292969f1cea1e96f2a8cfa67ba7e1077
     @GetMapping("/message")
     public String getMessage(){
         try {
