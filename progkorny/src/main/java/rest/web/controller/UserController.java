@@ -51,7 +51,6 @@ public class UserController {
         user.setId(id);
         return userService.updateUser(user);
     }
-
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable Long id) {
         log.info("process=delete-user, user_id={}", id);
@@ -65,7 +64,6 @@ public class UserController {
     @GetMapping("/szs")
     public User getUserSzS() {
         log.info("process=get-users");
-
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
@@ -83,21 +81,19 @@ public class UserController {
             System.out.println("14:51");
             System.out.println("14:42 + 14:47");
             System.out.println("14:57");
-            return "Szabó Máté" + ", Szabó Sándor"+ "14:53";
+            System.out.println("15:05");
+            return "Szabó Máté" + ", Szabó Sándor"+ "15:05";
         }
     }
 	
 	@GetMapping("/csa")
     public User getCsaUser() {
         log.info("process=get-users");
-
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
     @GetMapping("/szilajka")
     public User getSzilajkaUser(){
-        //log.info("process=get-user");
-
         return new User("Németi Szilárd", "szilajka1@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
