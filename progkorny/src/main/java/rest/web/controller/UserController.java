@@ -66,10 +66,17 @@ public class UserController {
         return new User("Szabó Máté", "szabo.mate@inf.unideb.hu", LocalDateTime.now() , LocalDateTime.now());
     }
 
+    @GetMapping("/szs")
+    public User getUser() {
+        log.info("process=get-users");
+
+        return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
+
     @GetMapping("/message")
     public String getMessage(){
-        System.out.println("14:42");
-        return "Szabó Máté";
+        System.out.println("14:42 + 14:47");
+        return "Szabó Máté" + ", Szabó Sándor";
     }
 
 }
