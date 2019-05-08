@@ -1,9 +1,6 @@
 package rest.web.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import rest.entity.User;
 import rest.service.UserService;
 
@@ -11,6 +8,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.HttpStatus.CREATED;
 
 @RestController
@@ -67,7 +67,6 @@ public class UserController {
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
-<<<<<<< HEAD
     @GetMapping("/NA")
     public User getUserNA() {
         log.info("process=get-users");
@@ -75,8 +74,11 @@ public class UserController {
         return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
+    @GetMapping("/szilajka")
+    public User getSzilajkaUser(){
+        return new User("Németi Szilárd", "szilajka1@gmail.com", LocalDateTime.now(), LocalDateTime.now());
+    }
 
-=======
     @GetMapping("/ka")
     public User getNameAttila() {
         log.info("process=get-users");
@@ -84,7 +86,6 @@ public class UserController {
         return new User("Kozma Attila", "atikozma@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
->>>>>>> 72b8716f292969f1cea1e96f2a8cfa67ba7e1077
     @GetMapping("/message")
     public String getMessage(){
         try {
@@ -108,19 +109,6 @@ public class UserController {
     public User getCsaUser() {
         log.info("process=get-users");
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
-    }
-
-    @GetMapping("/szilajka")
-    public User getSzilajkaUser(){
-        return new User("Németi Szilárd", "szilajka1@gmail.com", LocalDateTime.now(), LocalDateTime.now());
-    }
-
-
-    @GetMapping("/NA")
-    public User getUserNA() {
-        log.info("process=get-users");
-
-        return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
 }
