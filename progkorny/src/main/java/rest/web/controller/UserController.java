@@ -1,12 +1,13 @@
 package rest.web.controller;
 
-import rest.entity.User;
-import rest.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import rest.entity.User;
+import rest.service.UserService;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,6 +57,14 @@ public class UserController {
     public void deleteUser(@PathVariable Long id) {
         log.info("process=delete-user, user_id={}", id);
         userService.deleteUser(id);
+    }
+
+
+    @GetMapping("/NA")
+    public User getUserNA() {
+        log.info("process=get-users");
+
+        return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
 }
