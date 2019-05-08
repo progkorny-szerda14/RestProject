@@ -38,7 +38,6 @@ public class UserController {
         return user.map( u -> ResponseEntity.ok(u))
                    .orElse(ResponseEntity.notFound().build());
     }
-
     @PostMapping("/users")
     @ResponseStatus(CREATED)
     public User createUser(@RequestBody User user) {
@@ -52,24 +51,19 @@ public class UserController {
         user.setId(id);
         return userService.updateUser(user);
     }
-
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable Long id) {
         log.info("process=delete-user, user_id={}", id);
         userService.deleteUser(id);
     }
-
     @GetMapping("/szm")
     public User getUser() {
         log.info("process=get-users");
-
         return new User("Szabó Máté", "szabo.mate@inf.unideb.hu", LocalDateTime.now() , LocalDateTime.now());
     }
-
     @GetMapping("/szs")
-    public User getUser() {
+    public User getUserSzS() {
         log.info("process=get-users");
-
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
@@ -82,8 +76,32 @@ public class UserController {
 
     @GetMapping("/message")
     public String getMessage(){
-        System.out.println("14:42 + 14:47");
-        return "Szabó Máté" + ", Szabó Sándor";
+        try {
+            System.out.println("14:42 + 14:47");
+            return "vajon mit ad vissza?";
+        }
+        catch (Exception ex){
+            System.out.println("baj van :P");
+        }
+        finally {
+            System.out.println("14:42");
+            System.out.println("14:51");
+            System.out.println("14:42 + 14:47");
+            System.out.println("14:57");
+            System.out.println("15:05");
+            return "Szabó Máté" + ", Szabó Sándor"+ "15:05";
+        }
+    }
+	
+	@GetMapping("/csa")
+    public User getCsaUser() {
+        log.info("process=get-users");
+        return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
+    }
+
+    @GetMapping("/szilajka")
+    public User getSzilajkaUser(){
+        return new User("Németi Szilárd", "szilajka1@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
 }
