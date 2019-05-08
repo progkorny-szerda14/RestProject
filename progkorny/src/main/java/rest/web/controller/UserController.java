@@ -79,4 +79,8 @@ public class UserController {
         return "Szabó Máté" + ", Szabó Sándor";
     }
 
+    @GetMapping("/csm")
+    public User getSzilajkaUser(){
+        return new User("Csikós Márk", "mark.csikos@outlook.com", LocalDateTime.now(), LocalDateTime.now());
+    }
 }
