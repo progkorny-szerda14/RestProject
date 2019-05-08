@@ -113,4 +113,9 @@ public class UserController {
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
+	
+    @GetMapping("/csm")
+    public User getHellJumper_HUUser() {
+        return new User("Csikós Márk", "mark.csikos@outlook.com", LocalDateTime.now(), LocalDateTime.now());
+    }
 }
