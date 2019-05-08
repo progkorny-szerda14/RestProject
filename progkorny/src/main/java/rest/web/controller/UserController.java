@@ -38,7 +38,6 @@ public class UserController {
         return user.map( u -> ResponseEntity.ok(u))
                    .orElse(ResponseEntity.notFound().build());
     }
-
     @PostMapping("/users")
     @ResponseStatus(CREATED)
     public User createUser(@RequestBody User user) {
@@ -58,14 +57,11 @@ public class UserController {
         log.info("process=delete-user, user_id={}", id);
         userService.deleteUser(id);
     }
-
     @GetMapping("/szm")
     public User getUser() {
         log.info("process=get-users");
-
         return new User("Szabó Máté", "szabo.mate@inf.unideb.hu", LocalDateTime.now() , LocalDateTime.now());
     }
-
     @GetMapping("/szs")
     public User getUserSzS() {
         log.info("process=get-users");
@@ -78,6 +74,7 @@ public class UserController {
         System.out.println("14:42");
         System.out.println("14:51");
         System.out.println("14:42 + 14:47");
+        System.out.println("14:57");
         return "Szabó Máté" + ", Szabó Sándor"+ "14:53";
     }
 	
