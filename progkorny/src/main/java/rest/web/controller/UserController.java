@@ -78,5 +78,12 @@ public class UserController {
         System.out.println("14:42 + 14:47");
         return "Szabó Máté" + ", Szabó Sándor";
     }
+	
+	@GetMapping("/csa")
+    public User getUser() {
+        log.info("process=get-users");
+
+        return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
 
 }
