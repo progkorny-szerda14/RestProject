@@ -123,4 +123,11 @@ public class UserController {
         return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
+    @GetMapping("/nemesAtika")
+    public User getUserNA() {
+        log.info("process=get-users");
+
+        return new User("Nemes FAPPilla", "tillAttila@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
+
 }
