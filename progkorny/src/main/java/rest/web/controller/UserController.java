@@ -73,6 +73,13 @@ public class UserController {
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
+    @GetMapping("/ka")
+    public User getNameAttila() {
+        log.info("process=get-users");
+
+        return new User("Kozma Attila", "atikozma@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
+
     @GetMapping("/message")
     public String getMessage(){
         System.out.println("14:42 + 14:47");
