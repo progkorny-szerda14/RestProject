@@ -107,20 +107,16 @@ public class UserController {
         }
     }
 
-<<<<<<< HEAD
     @GetMapping("/csa")
     public User getUserCsa() {
         log.info("process=get-users");
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
-
 	
-    @GetMapping("/csm")
-    public User getHellJumper_HUUser() {
-=======
-    @GetMapping("/csm")
-    public User getSzilajkaUser(){
->>>>>>> 9a029e7c19066e38a613a9638a1a19482c5f6c49
+	@GetMapping("/csm")
+    public User getUserCsM() {
+        log.info("process=get-users");
         return new User("Csikós Márk", "mark.csikos@outlook.com", LocalDateTime.now(), LocalDateTime.now());
     }
+
 }
