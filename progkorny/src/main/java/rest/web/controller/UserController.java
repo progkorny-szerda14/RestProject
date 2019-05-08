@@ -67,7 +67,7 @@ public class UserController {
     }
 
     @GetMapping("/szs")
-    public User getUser() {
+    public User getSzsUser() {
         log.info("process=get-users");
 
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
@@ -75,15 +75,30 @@ public class UserController {
 
     @GetMapping("/message")
     public String getMessage(){
-        System.out.println("14:42 + 14:47");
-        return "Szabó Máté" + ", Szabó Sándor";
+        try {
+            System.out.println("14:42 + 14:47");
+            return "vajon mit ad vissza?";
+        }
+        catch (Exception ex){
+            System.out.println("baj van :P");
+        }
+        finally {
+            return "Szabó Máté" + ", Szabó Sándor";
+        }
     }
 	
 	@GetMapping("/csa")
-    public User getUser() {
+    public User getCsaUser() {
         log.info("process=get-users");
 
-        return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+        return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
+    }
+
+    @GetMapping("/szilajka")
+    public User getSzilajkaUser(){
+        //log.info("process=get-user");
+
+        return new User("Németi Szilárd", "szilajka1@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
 
 }
