@@ -106,7 +106,7 @@ public class UserController {
     }
 	
 	@GetMapping("/csa")
-    public User getCsaUser() {
+    public User getUserCsa() {
         log.info("process=get-users");
         return new User("Csoltkó András", "andras.csoltko@gmail.com", LocalDateTime.now(), LocalDateTime.now());
     }
