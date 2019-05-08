@@ -69,7 +69,8 @@ public class UserController {
     @GetMapping("/message")
     public String getMessage(){
         System.out.println("14:42");
-        return "Szabó Máté";
+        System.out.println("14:51");
+        return "Szabó Máté 14:51";
     }
 
 }
