@@ -67,16 +67,25 @@ public class UserController {
     }
 
     @GetMapping("/szs")
-    public User getUser() {
+    public User getUserSZS() {
         log.info("process=get-users");
 
         return new User("Szabó Sándor", "sanyi002@gmail.com", LocalDateTime.now() , LocalDateTime.now());
     }
 
+    @GetMapping("/NA")
+    public User getUserNA() {
+        log.info("process=get-users");
+
+        return new User("Nemes Attila", "n.tilla97@gmail.com", LocalDateTime.now() , LocalDateTime.now());
+    }
+
+
     @GetMapping("/message")
     public String getMessage(){
         System.out.println("14:42 + 14:47");
-        return "Szabó Máté" + ", Szabó Sándor";
+        System.out.println("15:02");
+        return "Szabó Máté";
     }
 
 }
